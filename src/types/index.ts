@@ -6,7 +6,5 @@ export interface TodoItem {
 }
 
 export type TodoList = {
-  completedCount:number,
-  activeCount:number,
   items: TodoItem[]
 }

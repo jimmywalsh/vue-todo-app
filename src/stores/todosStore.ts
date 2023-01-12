@@ -1,15 +1,29 @@
-import { TodoList } from '@/types'
+import { TodoList, TodoItem } from '@/types'
 import { defineStore } from 'pinia'
 
 export const initialState = {
-  completedCount: 0,
-  activeCount: 0,
   items: []
 }
 const useTodosStore = defineStore('todos', {
   state: () : TodoList => (initialState),
   actions: {
-
+    addTodo(todo:TodoItem) {
+      this.items.push(todo)
+    }
+  },
+  getters: {
+    active: (state): TodoItem[] => {
+      return state.items.filter(item => item.completed === false)
+    },
+    activeCount(): number {
+      return this.completed.length
+    },
+    completed: (state): TodoItem[] => {
+      return state.items.filter(item => item.completed === true)
+    },
+    completedCount(): number {
+      return this.completed.length
+    }
   }
 })
 
