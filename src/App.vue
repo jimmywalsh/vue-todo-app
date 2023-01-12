@@ -1,7 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import TodoList from './components/TodoList.vue'
+</script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1> 
+  <main class="flex justify-center mt-6">
+    <TodoList />
+  </main> 
 </template>
