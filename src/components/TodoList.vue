@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import useTodosStore from '@/stores/todosStore';
+import useTodosStore from '@/stores/todosStore'
+import CreateTodo from '@/components/CreateTodo.vue'
 
 const todosStore = useTodosStore()
 
@@ -7,8 +8,10 @@ const { activeCount, completedCount } = todosStore
 </script>
 
 <template>
-  <div class="columns-1">
+  <div class="flex flex-col justify-center items-center w-full">
   <h1 class="text-5xl font-bold underline">Todos</h1>
+  <hr />
+  <CreateTodo />
   <hr />
   <section>
     <h2 class="text-3xl font-semi-bold">Active ({{ activeCount }})</h2>
