@@ -16,7 +16,7 @@ const useTodosStore = defineStore('todos', {
       return state.items.filter(item => item.completed === false)
     },
     activeCount(): number {
-      return this.completed.length
+      return this.active.length
     },
     completed: (state): TodoItem[] => {
       return state.items.filter(item => item.completed === true)

@@ -28,18 +28,19 @@ describe('stores/WorkflowStore', () => {
     });
   });
 
-  describe('#completed', () => {
-    it('has a getter all the completed todos', () => {
-      const store = useTodosStore();
-      const completedTodo:TodoItem = {
-        text: 'Pick up groceries',
-        completed: true,
+  describe('#addTodo', () => {
+    it('adds todo to the state', () => {
+      const todoItem:TodoItem = {
+        text: 'Call grandma',
+        completed: false,
         createdAt: new Date()
       }
-      store.addTodo(completedTodo)
+      const store = useTodosStore();
+      const state = store.$state;
 
-      expect(store.completed).toEqual([completedTodo])
-      expect(store.completedCount).toEqual(1);
+      store.addTodo(todoItem)
+
+      expect(state.items).toEqual([todoItem]);
     })
   })
 
@@ -53,8 +54,23 @@ describe('stores/WorkflowStore', () => {
       }
       store.addTodo(activeTodo)
 
-      expect(store.active).toEqual([activeTodo])
-      expect(store.activeCount).toEqual(1);
+      expect(store.active[1]).toEqual(activeTodo)
+      expect(store.activeCount).toEqual(2);
+    })
+  })
+
+  describe('#completed', () => {
+    it('has a getter all the completed todos', () => {
+      const store = useTodosStore();
+      const completedTodo:TodoItem = {
+        text: 'Pick up groceries',
+        completed: true,
+        createdAt: new Date()
+      }
+      store.addTodo(completedTodo)
+
+      expect(store.completed).toEqual([completedTodo])
+      expect(store.completedCount).toEqual(1);
     })
   })
 });
