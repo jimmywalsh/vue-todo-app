@@ -1,14 +1,22 @@
 {
-  "name": "vue-todo-boilerplate",
+  "name": "vue-todo",
   "version": "0.0.0",
-  "description": "A simple Todo app boilerplate using Vite, Vue3, Typescript, & Tailwind CSS",
-  "main": "src/main.ts",
+  "description": "A simple Todo app using Vite, Vue3, Typescript, & Tailwind CSS",
+  "author": "James Walsh",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "src/main.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jimmyshaka/vue-todo-boilerplate.git"
+  "dependencies": {
+    "vue": "3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "4.0.0",
+    "vite": "4.0.4"
   },
   "keywords": [
     "vue",
@@ -18,11 +26,5 @@
     "typescript",
     "tailwind",
     "css"
-  ],
-  "author": "James Walsh",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/jimmyshaka/vue-todo-boilerplate/issues"
-  },
-  "homepage": "https://github.com/jimmyshaka/vue-todo-boilerplate#readme"
+  ]
 }
