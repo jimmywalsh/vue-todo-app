@@ -9,13 +9,14 @@
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noEmit": true,
     "baseUrl": ".",
+    "types": ["vitest/globals"],
     "paths": {
       "@/*": ["src/*"]
     },
-    "noEmit": true
   },
   "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-  "include": ["./src/**/*.ts", "./src/**/*.vue", "./src/**/tests/**/*.ts", "./src/**/*.json"],
+  "include": ["./src/**/*.ts", "./src/**/*.vue", "./src/**/*.json"],
   "exclude": ["dist", "node_modules"]
 }
