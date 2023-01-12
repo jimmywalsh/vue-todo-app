@@ -1,11 +1,12 @@
+import { TodoList } from '@/types'
 import { defineStore } from 'pinia'
 
 const initialState = {
   count: 0,
-  todos: []
+  items: []
 }
 const useTodosStore = defineStore('todos', {
-  state: () => (initialState),
+  state: () : TodoList => (initialState),
   actions: {
 
   }
