@@ -9,6 +9,9 @@ const useTodosStore = defineStore('todos', {
   actions: {
     addTodo(todo:TodoItem) {
       this.items.push(todo)
+    },
+    completeTodo(_todoText:string) {
+      // not implemented yet
     }
   },
   getters: {
