@@ -10,8 +10,9 @@ const useTodosStore = defineStore('todos', {
     addTodo(todo:TodoItem) {
       this.items.push(todo)
     },
-    completeTodo(_todoText:string) {
-      // not implemented yet
+    completeTodo(text:string) {
+      const foundItem = this.items.findIndex(item => item.text === text)
+      this.items[foundItem].completed = true
     }
   },
   getters: {

@@ -73,4 +73,29 @@ describe('stores/WorkflowStore', () => {
       expect(store.completedCount).toEqual(1);
     })
   })
+
+  describe('#completeTodo', () => {
+    it('looks up todo by text and marks completed', () => {
+      const todoItem1:TodoItem = {
+        text: 'Call grandma',
+        completed: false,
+        createdAt: new Date()
+      }
+      const todoItem2:TodoItem = {
+        text: 'Call Morty',
+        completed: false,
+        createdAt: new Date()
+      }
+      const store = useTodosStore();
+      store.$state.items = [
+        todoItem1,
+        todoItem2
+      ];
+      
+      store.completeTodo(todoItem2.text)
+
+      expect(store.completedCount).toEqual(1)
+      expect(store.completed).toEqual([todoItem2])
+    })
+  })
 });
